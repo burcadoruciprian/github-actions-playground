@@ -8,7 +8,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v2
       - name: Build AIP with deprecated advinst version
-        uses: caphyon/advinst-github-action@main
+        uses: caphyon/advinst-github-action@deprecation-error
         with:
           advinst-version: '16.0'
           advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
@@ -20,18 +20,5 @@ jobs:
           aip-commands: |
             SetProperty FOO="foo"
             SetVersion 1.2.0
-      - name: Build AIP with valid advinst version
-        uses: caphyon/advinst-github-action@deprecation-warning
-        with:
-          advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
-          advinst-enable-automation: 'false'
-          aip-path: ${{ github.workspace }}\enterprise.aip
-          aip-build-name: DefaultBuild
-          aip-package-name: setup.msi
-          aip-output-dir:  ${{ github.workspace }}\setup-ent
-          aip-commands: |
-            SetProperty FOO="foo"
-            SetVersion 1.2.0
-        
 
 
