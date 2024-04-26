@@ -1,18 +1,17 @@
 name: Build AIP and sign using Azure Trusted Sign
 
 env:
-  AZURE_TENANT_ID: ${{ secrets.SECRETS_TENANTID }}
-  AZURE_CLIENT_ID: ${{ secrets.SECRETS_CLIENTID }}
-  AZURE_CLIENT_SECRET: ${{ secrets.SECRETS_CLIENTSECRET }}
+  AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+  AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+  AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
 
-on:
-  workflow_dispatch:
+on: [workflow_dispatch]
 
 jobs:
   build:
-    runs-on: windows-latest    
+    runs-on: windows-latest
+    name: Build AIP and sign using Azure Trusted Sign    
     steps:   
-
       - uses: actions/checkout@v3
       - name: Setup .NET Core SDK 
         uses: actions/setup-dotnet@v3
