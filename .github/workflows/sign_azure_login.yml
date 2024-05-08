@@ -1,4 +1,4 @@
-name: Build AIP and sign using azure/trusted-sign-action
+name: Build AIP and sign azure/login
 
 on: [workflow_dispatch]
 
