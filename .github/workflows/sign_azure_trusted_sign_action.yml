@@ -29,3 +29,10 @@ jobs:
           endpoint: https://neu.codesigning.azure.net
           code-signing-account-name: CaphyonDigitalSignature
           certificate-profile-name: Caphyon
+
+      - name: Archive production artifacts (generated with advanced installer)
+        uses: actions/upload-artifact@v2
+        with:
+          name: Main
+          path:  ${{ github.workspace }}/main.msi
+
