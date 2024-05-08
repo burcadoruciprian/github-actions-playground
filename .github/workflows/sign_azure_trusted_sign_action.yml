@@ -1,0 +1,30 @@
+name: Build AIP and sign using azure/trusted-sign-action
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    name: run
+    steps:   
+      - uses: actions/checkout@v4
+    
+      - name: Build Package from AIP
+        uses: caphyon/advinst-github-action@main
+        with:
+          advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
+          advinst-enable-automation: 'true'
+          aip-path: enterprise.aip
+          aip-build-name: DefaultBuild
+          aip-package-name: main.msi
+          aip-output-dir: ${{ github.workspace }}
+
+      - name: Sign Package
+        uses: azure/trusted-signing-action@main
+        with: 
+          azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          files-folder: ${{ github.workspace }}/main.msi
+          endpoint: https://neu.codesigning.azure.net
+          code-signing-account-name: CaphyonDigitalSignature
+          certificate-profile-name: Caphyon
