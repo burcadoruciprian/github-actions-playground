@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="21.4" version="21.6.1" Modules="architect" RootPath="." Language="en" Id="{12155950-C1AA-4089-86D2-428280173690}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="21.4" version="21.7.1" Modules="architect" RootPath="." Language="en" Id="{12155950-C1AA-4089-86D2-428280173690}">
   <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
     <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;ActSyncAppComponent;CPLAppletComponent;AutorunComponent;GameUxComponent;SilverlightSlnComponent;SharePointSlnComponent;FixupComponent;MsiXDiffComponent;MsixManifestEditorComponent"/>
   </COMPONENT>
@@ -41,11 +41,11 @@
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="WinFormsApp1.exe" Component_="WinFormsApp1.exe" FileName="WINFOR~1.EXE|WinFormsApp1.exe" Attributes="0" SourcePath="WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.exe" SelfReg="false" DigSign="true"/>
-    <ROW File="WinFormsApp1.deps.json" Component_="WinFormsApp1.deps.json" FileName="WINFOR~1.JSO|WinFormsApp1.deps.json" Attributes="0" SourcePath="WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.deps.json" SelfReg="false"/>
-    <ROW File="WinFormsApp1.dll" Component_="WinFormsApp1.dll" FileName="WINFOR~1.DLL|WinFormsApp1.dll" Attributes="0" SourcePath="WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.dll" SelfReg="false"/>
-    <ROW File="WinFormsApp1.pdb" Component_="WinFormsApp1.exe" FileName="WINFOR~1.PDB|WinFormsApp1.pdb" Attributes="0" SourcePath="WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.pdb" SelfReg="false"/>
-    <ROW File="WinFormsApp1.runtimeconfig.json" Component_="WinFormsApp1.deps.json" FileName="WINFOR~2.JSO|WinFormsApp1.runtimeconfig.json" Attributes="0" SourcePath="WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.runtimeconfig.json" SelfReg="false"/>
+    <ROW File="WinFormsApp1.exe" Component_="WinFormsApp1.exe" FileName="WINFOR~1.EXE|WinFormsApp1.exe" Attributes="0" SourcePath="WinFormsApp\WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.exe" SelfReg="false" DigSign="true"/>
+    <ROW File="WinFormsApp1.deps.json" Component_="WinFormsApp1.deps.json" FileName="WINFOR~1.JSO|WinFormsApp1.deps.json" Attributes="0" SourcePath="WinFormsApp\WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.deps.json" SelfReg="false"/>
+    <ROW File="WinFormsApp1.dll" Component_="WinFormsApp1.dll" FileName="WINFOR~1.DLL|WinFormsApp1.dll" Attributes="0" SourcePath="WinFormsApp\WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.dll" SelfReg="false"/>
+    <ROW File="WinFormsApp1.pdb" Component_="WinFormsApp1.exe" FileName="WINFOR~1.PDB|WinFormsApp1.pdb" Attributes="0" SourcePath="WinFormsApp\WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.pdb" SelfReg="false"/>
+    <ROW File="WinFormsApp1.runtimeconfig.json" Component_="WinFormsApp1.deps.json" FileName="WINFOR~2.JSO|WinFormsApp1.runtimeconfig.json" Attributes="0" SourcePath="WinFormsApp\WinFormsApp1\bin\Release\net8.0-windows\WinFormsApp1.runtimeconfig.json" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>

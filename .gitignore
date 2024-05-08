@@ -1,3 +1,6 @@
 bin
 obj
 .vs
+*.back*
+WinFormsApp-cache
+WinFormsApp-SetupFiles
