@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: windows-latest
     name: run
-    environment: TEST_CI
+    environment: FEDERATED_CREDS
     steps:   
       - uses: actions/checkout@v4
 
