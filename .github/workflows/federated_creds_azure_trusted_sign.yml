@@ -34,8 +34,8 @@ jobs:
       - name: Sign Package
         uses: azure/trusted-signing-action@main
         with:
-          azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
           files-folder: ${{ github.workspace }}/main.msi
           endpoint: https://neu.codesigning.azure.net
           code-signing-account-name: CaphyonDigitalSignature
