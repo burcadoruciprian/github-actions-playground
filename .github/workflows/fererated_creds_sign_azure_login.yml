@@ -1,4 +1,4 @@
-name: Build AIP and sign azure/login
+name: Sign using federated indentity and Advinat
 
 on: [workflow_dispatch]
 
