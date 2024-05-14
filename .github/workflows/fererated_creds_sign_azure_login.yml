@@ -1,4 +1,4 @@
-name: Sign using federated indentity and Advinat
+name: Sign using federated indentity and Advinst
 
 on: [workflow_dispatch]
 
