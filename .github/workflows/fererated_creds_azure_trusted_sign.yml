@@ -1,0 +1,49 @@
+name: Sign using azure/trusted-signing-action with federated creds
+
+on: [workflow_dispatch]
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+    name: run
+    environment: FEDERATED_CREDS
+    steps:   
+      - uses: actions/checkout@v4
+
+      - name: 'Az CLI login'
+        uses: azure/login@master
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+    
+      - name: Build Package from AIP
+        uses: caphyon/advinst-github-action@main
+        with:
+          advinst-license: ${{ secrets.ADVINST_LICENSE_KEY }}
+          advinst-enable-automation: 'true'
+          aip-path: enterprise.aip
+          aip-build-name: DefaultBuild
+          aip-package-name: main.msi
+          aip-output-dir: ${{ github.workspace }}
+
+      - name: Sign Package
+        uses: azure/trusted-signing-action@main
+        with: 
+          azure-tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          azure-client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          files-folder: ${{ github.workspace }}/main.msi
+          endpoint: https://neu.codesigning.azure.net
+          code-signing-account-name: CaphyonDigitalSignature
+          certificate-profile-name: Caphyon
+
+      - name: Archive production artifacts (generated with advanced installer)
+        uses: actions/upload-artifact@v2
+        with:
+          name: Main
+          path:  ${{ github.workspace }}/main.msi
+
